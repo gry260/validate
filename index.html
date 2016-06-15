@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title></title>
+    <script src="https://code.jquery.com/jquery-2.2.4.min.js"
+            integrity="sha256-BbhdlvQf/xTY9gja0Dq3HiwQF8LaCRTXxZKRutelT44=" crossorigin="anonymous"></script>
+    <!-- Latest compiled and minified JavaScript -->
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/js/bootstrap.min.js"
+            integrity="sha384-0mSbJDEHialfmuBBQP6A4Qrprq5OVfW37PRR3j5ELqxss1yVqOtnepnHVP9aJ7xS"
+            crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css"
+          integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+    <script src="test.js"></script>
+    <script>
+        $(document).ready(function () {
+            $("input").formValidate();
+        })
+    </script>
+</head>
+<body>
+    <div class="row">
+        <div class="col-md-12">
+            <h3>JavaScript Form Validation with Boostrap: Quick and Easy</h3>
+        </div>
+    </div>
+    <div class="col-md-12">
+        <div class="alert bg-success">
+            <ul>
+                <li>The script has a catalog of almost all the common validation types built-in.</li>
+                <li>The idea is to create a set of “validation descriptors” associated with each element in a form. The
+                    “validation descriptor” is nothing but a string specifying the type of validation to be performed.
+                </li>
+                <li>Each field in the form can have zero one or more validations. For example, you can have an input
+                    field that
+                    should only contains integers, should be less than 25.
+                </li>
+            </ul>
+        </div>
+        <div class="col-md-12">
+            <h4>Using the form validation script</h4>
+            <h5>Call the Modules: $("input).formValidate();</h5>
+        </div>
+        <br /><br /><br />
+        <div class="col-md-2">
+            <label>Email:</label>
+            <input data-type="email" type="text" class="form-control" placeholder=""/>
+            <p class="helper-block">input <code>'data-type="email"'</code> into the attribute</p>
+        </div>
+        <div class="col-md-2">
+            <label>Integers:</label>
+            <input data-type="integer" type="text" class="form-control" placeholder=""/>
+
+            <p class="helper-block">input <code>'data-type="integer"'</code> into the attribute</p>
+        </div>
+        <div class="col-md-2">
+            <label>Numeric:</label>
+            <input data-type="double" type="text" class="form-control" placeholder=""/>
+
+            <p class="helper-block">input <code>'data-type="double"'</code> into the attribute</p>
+        </div>
+        <div class="col-md-2">
+            <label>Allow Sepcial Characters: , :</label>
+            <input type="text" class="form-control" data-chars='[",", ";"]'
+                   placeholder="try enter '<'  and mouse away"/>
+
+            <p class="helper-block">input <code>data-chars='[",", ":"]'</code> into the attribute.
+                Only Allow comma and semicolon as special characters. You can specify what special characters you want
+                to allow</p>
+        </div>
+
+        <div class="col-md-2">
+            <label>Minimum 5 Characters:</label>
+            <input type="text" data-minlength='5' class="form-control" placeholder="try 4 characters and click away"/>
+
+            <p class="helper-block">input <code>minlength='5'</code> into the attribute. Minimum 5 characters</p>
+        </div>
+    </div>
+
+    <div class="col-md-12">
+        <div class="col-md-2">
+            <label>Maximum 5 Characters:</label>
+            <input type="text" data-maxlength="5" class="form-control"
+                   placeholder="try enter '(' or ')' and mouse away"/>
+
+            <p class="helper-block">input <code>maxlength='5'</code> into the attribute.
+                Maximum 5 characters</p>
+        </div>
+
+        <div class="col-md-2">
+            <label>Custom Regex:</label>
+            <input type="text" data-regex='^[0-9]{4}$' class="form-control" data-msg='sample'
+                   placeholder="This field only allows 4 digits zip-code."/>
+
+            <p class="helper-block">input <code>data-regex='^[0-9]{4}$'</code> into the attribute.</p>
+        </div>
+
+        <div class="col-md-2">
+            <label>Custom Error Messages:</label>
+            <input type="text" data-msg='This specific field can only contains digits.' data-type="integer"
+                   class="form-control" data-msg='sample' placeholder="This is an integer field."/>
+
+            <p class="helper-block">input <code>data-msg='This specific field can only contains digits.'</code> into the
+                attribute.</p>
+        </div>
+
+
+    </div>
+
+
+    </body>
+</html>
+
+
